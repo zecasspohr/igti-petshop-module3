@@ -32,8 +32,8 @@ async function getProprietario(req, res, next) {
 async function updateProprietario(req, res, next) {
     try {
         let proprietario = req.body;
-        if (!proprietario.proprietario_id || !proprietario.nome || !proprietario.telefone) {
-            throw new Error("proprietario_id, nome e telefone são obrigatório!");
+        if (!proprietario.proprietarioId || !proprietario.nome || !proprietario.telefone) {
+            throw new Error("proprietarioId, nome e telefone são obrigatório!");
         }
         proprietario = await ProprietarioService.updateProprietario(proprietario);
         res.send(proprietario);
