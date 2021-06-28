@@ -3,6 +3,7 @@ import cors from "cors";
 import winston from "winston";
 import animalRouter from "./routes/animal.route.js";
 import proprietarioRouter from "./routes/proprietario.routes.js";
+import servicoRouter from "./routes/servico.route.js";
 
 const { combine, timestamp, label, printf } = winston.format;
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -28,6 +29,7 @@ app.use(cors());
 
 app.use("/proprietario", proprietarioRouter);
 app.use("/animal", animalRouter);
+app.use("/servico", servicoRouter);
 
 app.listen(3000, () => {
     console.log("API Iniciada!");
